@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+  <title>IPL 2026 Winner Prediction</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      height: 100vh;
+      margin: 0;
+      position: relative;
+      background: url("/static/ipl-bg.jpg") center center / cover no-repeat fixed;
+      overflow: hidden;
+    }
+    .watermark {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-25deg);
+      font-size: 80px;
+      font-weight: bold;
+      color: #000000;
+      white-space: nowrap;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .container {
+      position: relative;
+      z-index: 1;
+      padding: 40px;
+      text-align: center;
+      background-color: rgba(255,255,255,0.85);
+      border-radius: 8px;
+      display: inline-block;
+      margin-top: 60px;
+    }
+    select, button {
+      padding: 8px 12px;
+      font-size: 16px;
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="watermark">Fawaz C P</div>
+
+  <div class="container">
+    <h1>Predict IPL 2026 Winner</h1>
+    <form method="POST">
+      <label for="team">Select team:</label>
+      <select name="team" id="team">
+        {% for t in teams %}
+          <option value="{{ t }}">{{ t }}</option>
+        {% endfor %}
+      </select>
+      <button type="submit">Submit Prediction</button>
+    </form>
+    <p>Open the result app at <strong>http://localhost:5001</strong> to see live counts.</p>
+  </div>
+</body>
+</html>
+
