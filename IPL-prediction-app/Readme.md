@@ -1,5 +1,9 @@
 <img width="4200" height="3000" alt="image" src="https://github.com/user-attachments/assets/3f18f3c6-ba1c-4514-98c2-4685d9c618d2" />
 
+
+<img width="2848" height="1600" alt="image" src="https://github.com/user-attachments/assets/783a6323-af47-4693-82b9-abc953150cfe" />
+
+
 # Stack overview
 User (Browser) at the top, sending HTTP requests to both the prediction UI and result UI.
 
