@@ -8,3 +8,17 @@ Prediction service (Python/Flask) sends predictions into Redis.
 Worker service (.NET) reads predictions from Redis, aggregates them, and writes counts into Postgres.
 
 Result service (Node.js/Express) reads aggregated data from Postgres and displays it to the user.
+
+# Data flow
+User → Prediction service → Redis (stores raw team predictions).
+
+Worker ↔ Redis (consumes queue) → Postgres (stores team and count).
+
+Result service → Postgres (reads aggregated counts) → User (results page).
+
+# Deployment note
+The same microservice topology runs either:
+
+As Docker Compose services on your local machine, or
+
+As Kubernetes (Minikube) Deployments and Services (prediction, result, worker, redis, db) in the ipl-prediction namespace.
